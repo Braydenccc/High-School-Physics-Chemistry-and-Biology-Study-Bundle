@@ -125,6 +125,24 @@ npx serve .   # 或 npx http-server -p 8000
 
 ---
 
+## ☁️ 热铁盒(Retinbox)自动部署
+
+已添加以下自动部署文件:
+
+- `package.json`：新增 `npm run deploy`（执行 `deno -Ar https://host.retiehe.com/cli deploy`）
+- `rth-host.json`：热铁盒部署配置（当前 `outdir` 指向 `1.2`）
+- `.github/workflows/retinbox-auto-deploy.yml`：推送到 `main` 时自动部署
+
+使用前请完成:
+
+1. 修改仓库根目录 `rth-host.json` 的 `site` 为你的热铁盒站点标识
+2. 在 GitHub 仓库设置中添加机密变量 `RTH_API_KEY`（路径：`Settings → Secrets and variables → Actions`）
+3. 确保 API Key 仅放在机密变量或本地 `.env`，不要提交到仓库
+
+> 说明：本仓库是纯静态资源项目，因此 `rth-host.json` 未配置 `build`，直接发布 `1.2` 目录内容。
+
+---
+
 ## 🎯 核心功能
 
 | 模块 | 说明 |

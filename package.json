@@ -1,0 +1,7 @@
+{
+  "name": "high-school-study-bundle",
+  "private": true,
+  "scripts": {
+    "deploy": "deno -Ar https://host.retiehe.com/cli deploy"
+  }
+}
